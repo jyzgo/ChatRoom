@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  include templates/header
+  h1= videodata.categoryName
+
+  p Welcome to #{title}
+  p Welcome to #{points}
+
+  ul#videos
+    for book in videodata.categories
+       -var  xname = "https://thenewboston.com/videos_food.php?cat=" + book.categoryID
+       a(href = xname)  #{book.categoryName}
+       br
